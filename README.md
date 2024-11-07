@@ -1,6 +1,7 @@
 # EmpManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+[Click here](https://raghudalal.github.io/employee-management/) to see live.
 
 ## Development server
 
