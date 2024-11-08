@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Ubuntu", sans-serif !important;
+}
+:root {
+  --main-color: #ed4545;
+  --secondary-color: #0c2a43;
+  --background-color: #f3f0ed;
+  --dark-background: #292c31;
+}
+
+.error {
+  .error-text {
+    color: red;
+  }
+}
+
+.decor {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  .decor-static {
+    position: absolute;
+    font-size: 100px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-weight: 900;
+    color: var(--main-color);
+    opacity: 15%;
+  }
+
+  .decor-detail {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 20px;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: var(--main-color);
+    font-weight: 900;
+  }
+}
+
+.btn.primary {
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.btn.disabled {
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: grey;
+    border: none;
+    border-radius: 50px;
+    cursor: unset !important;
+    transition: all 0.3s ease 0s;
+  }
+
+.btn.primary:hover {
+  background-color: white;
+  text-decoration: none;
+  color: var(--main-color) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

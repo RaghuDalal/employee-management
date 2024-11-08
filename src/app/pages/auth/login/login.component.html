@@ -1,0 +1,55 @@
+<div class="login-main">
+  <div class="decor mt-5">
+    <div class="decor-static">Infrrd</div>
+    <div class="decor-detail">LOGIN</div>
+  </div>
+  <div class="login-container">
+    <div class="creds-container">
+      <form (ngSubmit)="onLogin()">
+        <div class="creds">
+          <div class="username cred">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              [value]="username()"
+              (input)="onFieldsChange($event, false)"
+              required
+            />
+          </div>
+
+          <div class="password cred">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              [value]="password()"
+              (input)="onFieldsChange($event, true)"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="error inline-absolute">
+          <p *ngIf="loginError()" class="error-text">
+            Invalid credentials. Please try again.
+          </p>
+        </div>
+
+        <div class="button">
+          <button
+            [disabled]="isDisabled()"
+            [ngClass]="{
+              'disabled': isDisabled(),
+              'primary': !isDisabled()
+            }"
+            type="submit"
+            class="btn"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
