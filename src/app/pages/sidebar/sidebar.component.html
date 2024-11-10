@@ -1,0 +1,16 @@
+<div class="main flex-column">
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="logo" height="100" />
+  </div>
+
+  <nav class="sidebar-links flex-column">
+    <div class="upper flex-column">
+      <button class="btn primary" routerLink="/home/employees" routerLinkActive="active">Employees</button>
+      <button class="btn primary" routerLink="/home/search" routerLinkActive="active">Search</button>
+    </div>
+
+    <div class="lower">
+      <button class="btn primary" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</div>

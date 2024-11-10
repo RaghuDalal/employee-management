@@ -1,0 +1,54 @@
+<div class="employee-container">
+  <div class="main flex-column">
+    <div class="header flex-row">
+      <div class="left">
+        <img [src]="employee().avatar" alt="avatar" width="100px" />
+      </div>
+
+      <div class="right">
+        <div class="name">{{ employee().name }}</div>
+        <div class="designation">{{ employee().designation }}</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="details">
+        <div class="title">Company Name:</div>
+        <div class="details">
+          {{ employee().companyName }}
+        </div>
+      </div>
+      <div class="details">
+        <div class="title">Email:</div>
+
+        <div class="details">
+          {{ employee().email }}
+        </div>
+      </div>
+      <div class="details">
+        <div class="title">Contact:</div>
+        <div class="details">
+          {{ employee().contactNo }}
+        </div>
+      </div>
+    </div>
+
+    @if (showActions()){
+    <div class="footer flex-row">
+      <div class="action">
+        <button class="btn primary" (click)="editEmp()">Edit</button>
+      </div>
+      <div class="action">
+        <button class="btn danger" (click)="deleteEmp()">Delete</button>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+@defer (when showConfirmationModal()) {
+<app-confirmation-modal
+  *ngIf="showConfirmationModal()"
+  (confirmed)="callback($event)"
+></app-confirmation-modal>
+}

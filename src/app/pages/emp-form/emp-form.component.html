@@ -1,0 +1,113 @@
+<div class="emp-form">
+  <div class="title">
+    <app-title
+      [backgroundText]="'EMPLOYEE'"
+      [mainText]="isEditMode ? 'EDIT' : 'ADD'"
+    ></app-title>
+  </div>
+
+  <div class="header flex-end">
+    <button class="btn primary" (click)="goBack()">Cancel</button>
+  </div>
+
+  <div class="form">
+    <form (ngSubmit)="saveEmployee()">
+      <div class="row">
+        <div class="form-item">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            [(ngModel)]="employee.name"
+            name="name"
+            required
+            (input)="onFieldsChange($event)"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="companyNameInp">Company Name</label>
+          <input
+            id="companyNameInp"
+            type="text"
+            [(ngModel)]="employee.companyName"
+            name="companyName"
+            required
+            (input)="onFieldsChange($event)"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="employee.email"
+            name="email"
+            required
+            (input)="onFieldsChange($event)"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="contactNo">Contact</label>
+          <input
+            type="number"
+            [(ngModel)]="employee.contactNo"
+            name="contactNo"
+            required
+            (input)="onFieldsChange($event)"
+          />
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label for="designation">Designation</label>
+        <select
+          [(ngModel)]="employee.designation"
+          name="designation"
+          id="designation"
+          (change)="onFieldsChange($event)"
+        >
+          <option value="Software Developer">Software Developer</option>
+          <option value="Senior Software Developer">
+            Senior Software Developer
+          </option>
+          <option value="Quality Assurance">Quality Assurance</option>
+          <option value="Technical Lead">Technical Lead</option>
+          <option value="Manager">Manager</option>
+        </select>
+      </div>
+
+      <div class="cont-bg">
+        <h5>Avatar</h5>
+        <div class="cont-main">
+          <ng-container *ngFor="let image of images; index as i">
+            <div class="cont-checkbox" (click)="selectAvatar(image)">
+              <input type="radio" name="avatar" [id]="'avatar-' + i" [checked]="employee.avatar === image" />
+              <label [for]="'avatar-' + i">
+                <img [src]="image" class="avatar" />
+                <span class="cover-checkbox">
+                  <svg viewBox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </svg>
+                </span>
+              </label>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn"
+        [disabled]="!isValid()"
+        [ngClass]="{
+          disabled: !isValid(),
+          primary: isValid()
+        }"
+      >
+        {{ isEditMode ? "Update" : "Add" }} Employee
+      </button>
+    </form>
+  </div>
+</div>

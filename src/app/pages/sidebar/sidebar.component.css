@@ -1,0 +1,19 @@
+.main {
+    height: 100%;
+    width: 100%;
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar-links {
+    gap: 15px;
+    .upper {
+      gap: 10px;
+    }
+    .lower {
+      position: absolute;
+      bottom: 5%;
+    }
+  }
+}

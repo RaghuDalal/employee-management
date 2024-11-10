@@ -1,0 +1,29 @@
+<div class="title">
+  <app-title [backgroundText]="'Infrrd'" [mainText]="'Search'"></app-title>
+</div>
+
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search..."
+    [value]="searchStr()"
+    class="search-bar"
+    (change)="searchEmp($event)"
+  />
+</div>
+
+<div class="results">
+  @if(searchResults().length) {
+  <div class="total">Total results: &nbsp; <span class="count">{{ searchResults().length }}</span></div>
+  <div class="search-results">
+    @for(employee of searchResults(); track employee){
+    <app-emp-card [employee]="employee" [showActions]="true"></app-emp-card>
+    }
+  </div>
+
+  } @else { @if (searchStr()) {
+  <p class="info">No results found</p>
+  } @else {
+  <p class="info">Start typing a name or email and press 'Enter' to search.</p>
+  } }
+</div>

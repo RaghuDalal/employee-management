@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   font-family: "Ubuntu", sans-serif !important;
+  body {
+    margin: 0 !important;
+  }
 }
 :root {
-  --main-color: #ed4545;
+  --main-color: #3ca47c;
   --secondary-color: #0c2a43;
   --background-color: #f3f0ed;
   --dark-background: #292c31;
@@ -15,39 +18,16 @@
   }
 }
 
-.decor {
-  text-align: center;
+.flex-end {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  .decor-static {
-    position: absolute;
-    font-size: 100px;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    font-weight: 900;
-    color: var(--main-color);
-    opacity: 15%;
-  }
-
-  .decor-detail {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 20px;
-    color: white;
-    padding-left: 30px;
-    padding-right: 30px;
-    background: var(--main-color);
-    font-weight: 900;
-  }
+  justify-content: end;
+  margin-top: 30px;
 }
 
 .btn.primary {
   font-weight: bolder;
   color: white;
   text-decoration: none;
-  margin-left: 20px;
   padding: 9px 25px;
   background-color: var(--main-color);
   border: none;
@@ -56,11 +36,49 @@
   transition: all 0.3s ease 0s;
 }
 
+.btn.primary.active {
+  font-weight: bolder;
+  color: var(--main-color) !important;
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: unset !important;
+  border: 1px solid var(--main-color);
+}
+
+input,
+select {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 6px;
+  border-width: 1px;
+}
+
+label {
+  margin-bottom: 4px;
+  color: var(--secondary-color);
+}
+
+.btn.danger {
+  font-weight: bolder;
+  color: red !important;
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid red;
+}
+
 .btn.disabled {
     font-weight: bolder;
     color: white;
     text-decoration: none;
-    margin-left: 20px;
     padding: 9px 25px;
     background-color: grey;
     border: none;
@@ -70,8 +88,32 @@
   }
 
 .btn.primary:hover {
+  border: 1px solid var(--main-color);
   background-color: white;
   text-decoration: none;
   color: var(--main-color) !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.btn.danger:hover {
+  border: 1px solid red;
+  background-color: white;
+  text-decoration: none;
+  color: red !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.btn.primary.active:hover {
+  text-decoration: none;
+  box-shadow: unset !important;
+}
+
+.flex-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.flex-row {
+  display: flex !important;
+  flex-direction: row !important;
 }

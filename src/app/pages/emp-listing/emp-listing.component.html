@@ -1,0 +1,25 @@
+<div class="title">
+  <app-title [backgroundText]="'Infrrd'" [mainText]="'Employees'"></app-title>
+</div>
+<div class="listing-wrapper">
+    
+    <div class="header flex-end">
+        <button class="btn primary" (click)="openAddEmployee()">Add Employee</button>
+    </div>
+
+    <div class="listing-area">
+        @if(employees().length) {
+            @for(employee of employees(); track employee){
+                <app-emp-card [employee]="employee" [showActions]="true" (onDelete)="handleEmpDelete($event)"></app-emp-card>
+            }
+        } @else {
+            <p>No Employee data found</p>
+        }
+    </div>
+    @if(employees().length) {
+        <div class="total">
+            Total results: <span class="count">{{employees().length}}</span>
+        </div>
+    }
+    
+</div>

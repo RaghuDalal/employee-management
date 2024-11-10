@@ -1,0 +1,31 @@
+.employee-container {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 20px;
+  .body {
+    .details {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  .footer{
+    margin-top: 10px;
+    gap: 10px;
+  }
+}
+.header {
+  gap: 10px;
+  .right {
+    .name {
+      font-weight: bolder;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      color: var(--main-color);
+    }
+    .designation {
+      color: gray;
+    }
+  }
+}

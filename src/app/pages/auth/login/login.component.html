@@ -1,14 +1,14 @@
 <div class="login-main">
-  <div class="decor mt-5">
-    <div class="decor-static">Infrrd</div>
-    <div class="decor-detail">LOGIN</div>
+  <div class="logo">
+  <app-title [backgroundText]="'Infrrd'" [mainText]="'LOGIN'"></app-title>
+
   </div>
   <div class="login-container">
     <div class="creds-container">
       <form (ngSubmit)="onLogin()">
         <div class="creds">
           <div class="username cred">
-            <label for="username">Username:</label>
+            <label for="username">Username</label>
             <input
               type="text"
               id="username"
@@ -19,7 +19,7 @@
           </div>
 
           <div class="password cred">
-            <label for="password">Password:</label>
+            <label for="password">Password</label>
             <input
               type="password"
               id="password"

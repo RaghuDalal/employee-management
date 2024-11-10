@@ -1,0 +1,16 @@
+.listing-wrapper {
+  .listing-area {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .total {
+    margin-top: 30px;
+    .count {
+        color: var(--main-color);
+    }
+  }
+}

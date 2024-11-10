@@ -1,0 +1,27 @@
+.decor {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    .decor-static {
+      position: absolute;
+      font-size: 100px;
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: var(--main-color);
+      opacity: 15%;
+    }
+  
+    .decor-detail {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 20px;
+      color: white;
+      padding-left: 30px;
+      padding-right: 30px;
+      background: var(--main-color);
+      font-weight: 900;
+    }
+  }
